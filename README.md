@@ -1,5 +1,7 @@
 # Finyze
-Application for tracking and analyzing your financial portfolio
+Application for tracking and analyzing your financial portfolio.
+
+~Track Smarter. Invest Better.
 
 ## Features
 
@@ -9,8 +11,8 @@ Application for tracking and analyzing your financial portfolio
 
 * Support for multiple currencies + automatic FX rate tracking
   
-##Monetization:
+## Monetization:
 
-* Only one portfolio for free, need to but subscription to have more.
+* Only one portfolio for free, need to buy subscription to have more.
 * AI-based price prediction of assets
 * Integration with other platforms to automatically fetch the assets e.g fetch owned stocks from XTB
