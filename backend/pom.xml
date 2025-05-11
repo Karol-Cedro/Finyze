@@ -9,7 +9,7 @@
         <relativePath/>
     </parent>
     <groupId>com.finyze</groupId>
-    <artifactId>finyze-backend</artifactId>
+    <artifactId>backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>finyze-backend</name>
     <description>finyze-backend</description>
@@ -25,6 +25,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.20.1</version>
         </dependency>
 
         <dependency>

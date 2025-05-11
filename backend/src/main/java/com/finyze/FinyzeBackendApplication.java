@@ -1,4 +1,4 @@
-package com.finyze.finyzebackend;
+package com.finyze;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

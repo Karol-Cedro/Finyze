@@ -1,4 +1,4 @@
-package com.finyze.finyzebackend;
+package com.finyze;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
