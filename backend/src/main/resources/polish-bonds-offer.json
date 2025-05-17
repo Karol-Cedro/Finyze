@@ -1,0 +1,57 @@
+[ {
+  "type" : "OTS",
+  "interestRate" : 3.0,
+  "price" : 100.0,
+  "exchangePrice" : 100.0,
+  "series" : "Seria: OTS0825",
+  "label" : "STAŁOPROCENTOWE"
+}, {
+  "type" : "ROR",
+  "interestRate" : 5.75,
+  "price" : 100.0,
+  "exchangePrice" : 99.9,
+  "series" : "Seria: ROR0526",
+  "label" : "ZMIENNOPROCENTOWE"
+}, {
+  "type" : "DOR",
+  "interestRate" : 5.9,
+  "price" : 100.0,
+  "exchangePrice" : 99.9,
+  "series" : "Seria: DOR0527",
+  "label" : "ZMIENNOPROCENTOWE"
+}, {
+  "type" : "TOS",
+  "interestRate" : 5.75,
+  "price" : 100.0,
+  "exchangePrice" : 99.9,
+  "series" : "Seria: TOS0528",
+  "label" : "STAŁOPROCENTOWE"
+}, {
+  "type" : "COI",
+  "interestRate" : 6.1,
+  "price" : 100.0,
+  "exchangePrice" : 99.9,
+  "series" : "Seria: COI0529",
+  "label" : "INDEKSOWANE INFLACJĄ"
+}, {
+  "type" : "EDO",
+  "interestRate" : 6.35,
+  "price" : 100.0,
+  "exchangePrice" : 99.9,
+  "series" : "Seria: EDO0535",
+  "label" : "INDEKSOWANE INFLACJĄ"
+}, {
+  "type" : "ROS",
+  "interestRate" : 6.3,
+  "price" : 100.0,
+  "exchangePrice" : null,
+  "series" : "Seria: ROS0531",
+  "label" : "INDEKSOWANE INFLACJĄ"
+}, {
+  "type" : "ROD",
+  "interestRate" : 6.6,
+  "price" : 100.0,
+  "exchangePrice" : null,
+  "series" : "Seria: ROD0537",
+  "label" : "INDEKSOWANE INFLACJĄ"
+} ]
