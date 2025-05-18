@@ -8,11 +8,11 @@ public class BondParser {
         return BondType.valueOf(bondName.substring(bondName.length() - 3));
     }
 
-    public static double parseBondInterestRate(String bondInterestRate) {
+    public static Double parseBondInterestRate(String bondInterestRate) {
         return Double.parseDouble(bondInterestRate.substring(0, bondInterestRate.length() - 1).replace(",", "."));
     }
 
-    public static double parseBondPrice(String bondPrice) {
+    public static Double parseBondPrice(String bondPrice) {
         return Double.parseDouble(bondPrice.split("Cena zakupu")[1].trim().replace("zł", "").replace(",", "."));
     }
 
