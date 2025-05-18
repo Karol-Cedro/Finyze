@@ -9,7 +9,7 @@
         <relativePath/>
     </parent>
     <groupId>com.finyze</groupId>
-    <artifactId>backend</artifactId>
+    <artifactId>finyze-backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>finyze-backend</name>
     <description>finyze-backend</description>
