@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-crypto',
   imports: [],
   templateUrl: './crypto.html',
-  styleUrl: './crypto.css'
+  styleUrl: './crypto.scss'
 })
 export class Crypto {
 

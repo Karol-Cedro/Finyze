@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-bonds',
   imports: [],
   templateUrl: './bonds.html',
-  styleUrl: './bonds.css'
+  styleUrl: './bonds.scss'
 })
 export class Bonds {
 

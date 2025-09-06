@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-stocks',
   imports: [],
   templateUrl: './stocks.html',
-  styleUrl: './stocks.css'
+  styleUrl: './stocks.scss'
 })
 export class Stocks {
 
