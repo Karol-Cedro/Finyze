@@ -3,55 +3,55 @@
   "interestRate" : 3.0,
   "price" : 100.0,
   "exchangePrice" : 100.0,
-  "series" : "Seria: OTS0825",
+  "series" : "Seria: OTS1225",
   "label" : "STAŁOPROCENTOWE"
 }, {
   "type" : "ROR",
-  "interestRate" : 5.75,
+  "interestRate" : 5.0,
   "price" : 100.0,
   "exchangePrice" : 99.9,
-  "series" : "Seria: ROR0526",
+  "series" : "Seria: ROR0926",
   "label" : "ZMIENNOPROCENTOWE"
 }, {
   "type" : "DOR",
-  "interestRate" : 5.9,
+  "interestRate" : 5.15,
   "price" : 100.0,
   "exchangePrice" : 99.9,
-  "series" : "Seria: DOR0527",
+  "series" : "Seria: DOR0927",
   "label" : "ZMIENNOPROCENTOWE"
 }, {
   "type" : "TOS",
-  "interestRate" : 5.75,
+  "interestRate" : 5.4,
   "price" : 100.0,
   "exchangePrice" : 99.9,
-  "series" : "Seria: TOS0528",
+  "series" : "Seria: TOS0928",
   "label" : "STAŁOPROCENTOWE"
 }, {
   "type" : "COI",
-  "interestRate" : 6.1,
+  "interestRate" : 5.75,
   "price" : 100.0,
   "exchangePrice" : 99.9,
-  "series" : "Seria: COI0529",
+  "series" : "Seria: COI0929",
   "label" : "INDEKSOWANE INFLACJĄ"
 }, {
   "type" : "EDO",
-  "interestRate" : 6.35,
+  "interestRate" : 6.0,
   "price" : 100.0,
   "exchangePrice" : 99.9,
-  "series" : "Seria: EDO0535",
+  "series" : "Seria: EDO0935",
   "label" : "INDEKSOWANE INFLACJĄ"
 }, {
   "type" : "ROS",
-  "interestRate" : 6.3,
+  "interestRate" : 5.95,
   "price" : 100.0,
   "exchangePrice" : null,
-  "series" : "Seria: ROS0531",
+  "series" : "Seria: ROS0931",
   "label" : "INDEKSOWANE INFLACJĄ"
 }, {
   "type" : "ROD",
-  "interestRate" : 6.6,
+  "interestRate" : 6.25,
   "price" : 100.0,
   "exchangePrice" : null,
-  "series" : "Seria: ROD0537",
+  "series" : "Seria: ROD0937",
   "label" : "INDEKSOWANE INFLACJĄ"
 } ]

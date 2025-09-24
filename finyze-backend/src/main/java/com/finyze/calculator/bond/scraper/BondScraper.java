@@ -47,7 +47,7 @@ public class BondScraper {
         }
 
         ObjectMapper mapper = new ObjectMapper();
-        mapper.writerWithDefaultPrettyPrinter().writeValue(new File("backend/src/main/resources/polish-bonds-offer.json"), bonds);
+        mapper.writerWithDefaultPrettyPrinter().writeValue(new File("finyze-backend/src/main/resources/polish-bonds-offer.json"), bonds);
     }
 }
 
