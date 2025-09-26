@@ -3,6 +3,8 @@ Application for tracking and analyzing your financial portfolio.
 
 ~Track Smarter. Invest Better.
 
+Finyze API documented using swagger is available under http://localhost:8080/finyze-swagger
+
 ## Features
 
 * Connect exchanges/brokerages via APIs (e.g., Binance, Coinbase, XTB, etc.)
