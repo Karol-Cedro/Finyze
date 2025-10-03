@@ -1,4 +1,4 @@
-name: Finyze Backed CI
+name: Finyze Frontend CI
 
 on:
   push:
@@ -13,6 +13,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: finyze-frontend
     strategy:
       matrix:
         node-version: [ 22 ]
