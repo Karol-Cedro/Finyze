@@ -1,10 +1,14 @@
-name: Finyze CI/CD
+name: Finyze Backed CI
 
 on:
   push:
     branches: [ "main" ]
+    paths:
+      - finyze-backend
   pull_request:
     branches: [ "main" ]
+    paths:
+      - finyze-backend
 
 jobs:
   build:
@@ -22,4 +26,4 @@ jobs:
 
       - name: Build Backend
         working-directory: finyze-backend
-        run: mvn clean package
+        run: mvn clean install
