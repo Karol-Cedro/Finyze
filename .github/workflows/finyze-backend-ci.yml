@@ -4,11 +4,11 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - finyze-backend
+      - 'finyze-backend/**'
   pull_request:
     branches: [ "main" ]
     paths:
-      - finyze-backend
+      - 'finyze-backend/**'
 
 jobs:
   build:
