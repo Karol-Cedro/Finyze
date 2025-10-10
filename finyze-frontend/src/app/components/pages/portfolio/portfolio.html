@@ -1,1 +1,24 @@
-<p>portfolio works!</p>
+<div class="portfolio-container">
+  @if (isLoading) {
+    <div class="loading">
+      <p>Loading portfolio data...</p>
+    </div>
+  } @else if (error) {
+    <div class="error">
+      <p>{{ error }}</p>
+      <button (click)="loadPortfolio(1)">Retry</button>
+    </div>
+  } @else if (portfolioData) {
+    <div class="portfolio-details">
+      <h2>Portfolio Details</h2>
+      <div class="portfolio-info">
+        <p><strong>Name:</strong> {{ portfolioData }}</p>
+        <!-- Add more portfolio details here as needed -->
+      </div>
+    </div>
+  } @else {
+    <div class="no-data">
+      <p>No portfolio data available.</p>
+    </div>
+  }
+</div>

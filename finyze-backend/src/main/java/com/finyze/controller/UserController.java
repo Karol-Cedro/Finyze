@@ -31,7 +31,7 @@ public class UserController {
     }
 
     @GetMapping("/{id}/portfolios")
-    public List<Portfolio> getUserPortfolios(@PathVariable Long id) {
+    public List<String> getUserPortfolios(@PathVariable Long id) {
         return userService.getUserPortfolios(id);
     }
 }
