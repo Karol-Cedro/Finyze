@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {PortfolioService, IPortfolio} from '../../../services/portfolio.service';
+import { PortfolioService } from '../../../services/portfolio.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -10,7 +10,7 @@ import {PortfolioService, IPortfolio} from '../../../services/portfolio.service'
   styleUrls: ['./portfolio.css']
 })
 export class Portfolio implements OnInit {
-  portfolio: IPortfolio | null = null;
+  portfolioData: string[] = [];
   isLoading = true;
   error: string | null = null;
 
@@ -26,12 +26,12 @@ export class Portfolio implements OnInit {
 
     this.portfolioService.getPortfolio(id).subscribe({
       next: (data) => {
-        this.portfolio = data;
+        this.portfolioData = data;
         this.isLoading = false;
       },
       error: (err) => {
-        console.error('Error fetching portfolio:', err);
-        this.error = 'Failed to load portfolio data';
+        console.error('Error fetching portfolios:', err);
+        this.error = 'Failed to load portfolios data';
         this.isLoading = false;
       }
     });

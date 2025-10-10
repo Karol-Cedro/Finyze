@@ -31,7 +31,7 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public List<Portfolio> getUserPortfolios(Long userId) {
-        return portfolioRepository.findByUserId(userId);
+    public List<String> getUserPortfolios(Long userId) {
+        return portfolioRepository.findByUserId(userId).stream().map(Portfolio::getName).toList();
     }
 }
