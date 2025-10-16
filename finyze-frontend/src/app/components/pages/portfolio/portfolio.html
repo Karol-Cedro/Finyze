@@ -1,24 +1,33 @@
+<!-- portfolio.html -->
 <div class="portfolio-container">
   @if (isLoading) {
     <div class="loading">
-      <p>Loading portfolio data...</p>
+      <p>Loading portfolios...</p>
     </div>
   } @else if (error) {
     <div class="error">
       <p>{{ error }}</p>
-      <button (click)="loadPortfolio(1)">Retry</button>
+      <button (click)="loadPortfolios(1)">Retry</button>
     </div>
-  } @else if (portfolioData) {
-    <div class="portfolio-details">
-      <h2>Portfolio Details</h2>
-      <div class="portfolio-info">
-        <p><strong>Name:</strong> {{ portfolioData }}</p>
-        <!-- Add more portfolio details here as needed -->
+  } @else if (portfolios.length > 0) {
+    <div class="portfolios-list">
+      <h2>My Portfolios</h2>
+      <div class="portfolio-grid">
+        @for (portfolio of portfolios; track portfolio.portfolioId) {
+          <div class="portfolio-card">
+            <h3>{{ portfolio.portfolioName }}</h3>
+            <div class="portfolio-actions">
+              <button class="btn-view" (click)="viewPortfolio(portfolio.portfolioId)">View</button>
+              <button class="btn-edit" (click)="editPortfolio(portfolio.portfolioId)">Edit</button>
+            </div>
+          </div>
+        }
       </div>
     </div>
   } @else {
-    <div class="no-data">
-      <p>No portfolio data available.</p>
+    <div class="no-portfolios">
+      <p>No portfolios found. Create your first portfolio to get started!</p>
+      <button class="btn-primary" (click)="createNewPortfolio()">Create Portfolio</button>
     </div>
   }
 </div>

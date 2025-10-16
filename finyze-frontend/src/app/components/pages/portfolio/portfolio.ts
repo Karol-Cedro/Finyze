@@ -1,6 +1,7 @@
+// portfolio.ts
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PortfolioService } from '../../../services/portfolio.service';
+import { PortfolioService, PortfolioListItem } from '../../../services/portfolio.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -10,30 +11,42 @@ import { PortfolioService } from '../../../services/portfolio.service';
   styleUrls: ['./portfolio.css']
 })
 export class Portfolio implements OnInit {
-  portfolioData: string[] = [];
+  portfolios: PortfolioListItem[] = [];
   isLoading = true;
   error: string | null = null;
 
   constructor(private portfolioService: PortfolioService) {}
 
   ngOnInit(): void {
-    this.loadPortfolio(1); // Fetch portfolio with ID 1
+    this.loadPortfolios(1); // Assuming user ID 1 for now
   }
 
-  loadPortfolio(id: number): void {
+  loadPortfolios(userId: number): void {
     this.isLoading = true;
     this.error = null;
 
-    this.portfolioService.getPortfolio(id).subscribe({
+    this.portfolioService.getPortfolio(userId).subscribe({
       next: (data) => {
-        this.portfolioData = data;
+        this.portfolios = data;
         this.isLoading = false;
       },
       error: (err) => {
         console.error('Error fetching portfolios:', err);
-        this.error = 'Failed to load portfolios data';
+        this.error = 'Failed to load portfolios';
         this.isLoading = false;
       }
     });
+  }
+
+  createNewPortfolio() {
+    // Implement create portfolio functionality
+  }
+
+  editPortfolio(id: number) {
+    // Implement edit portfolio functionality
+  }
+
+  viewPortfolio(id: number) {
+    // Implement view portfolio details functionality
   }
 }
