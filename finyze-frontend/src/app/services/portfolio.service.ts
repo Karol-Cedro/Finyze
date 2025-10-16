@@ -2,6 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+export interface PortfolioListItem {
+  portfolioId: number;
+  portfolioName: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -10,7 +15,7 @@ export class PortfolioService {
 
   constructor(private http: HttpClient) { }
 
-  getPortfolio(id: number): Observable<string[]> {
-    return this.http.get<string[]>(`${this.apiUrl}/${id}/portfolios`);
+  getPortfolio(userId: number): Observable<PortfolioListItem[]> {
+    return this.http.get<PortfolioListItem[]>(`${this.apiUrl}/${userId}/portfolios`);
   }
 }
