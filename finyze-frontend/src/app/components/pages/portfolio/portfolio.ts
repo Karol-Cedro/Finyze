@@ -11,6 +11,10 @@ import { PortfolioService, PortfolioListItem } from '../../../services/portfolio
   styleUrls: ['./portfolio.css']
 })
 export class Portfolio implements OnInit {
+  // Static property to persist across component instances
+  private static cachedPortfolios: PortfolioListItem[] | null = null;
+  private static hasLoaded = false;
+
   portfolios: PortfolioListItem[] = [];
   isLoading = true;
   error: string | null = null;
@@ -18,7 +22,13 @@ export class Portfolio implements OnInit {
   constructor(private portfolioService: PortfolioService) {}
 
   ngOnInit(): void {
-    this.loadPortfolios(1); // Assuming user ID 1 for now
+    // Check if we already have cached data
+    if (Portfolio.hasLoaded && Portfolio.cachedPortfolios) {
+      this.portfolios = Portfolio.cachedPortfolios;
+      this.isLoading = false;
+    } else {
+      this.loadPortfolios(1);
+    }
   }
 
   loadPortfolios(userId: number): void {
@@ -28,6 +38,9 @@ export class Portfolio implements OnInit {
     this.portfolioService.getPortfolio(userId).subscribe({
       next: (data) => {
         this.portfolios = data;
+        // Cache the data for future instances
+        Portfolio.cachedPortfolios = data;
+        Portfolio.hasLoaded = true;
         this.isLoading = false;
       },
       error: (err) => {
