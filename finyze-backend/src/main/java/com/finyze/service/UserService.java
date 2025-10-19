@@ -1,7 +1,6 @@
 package com.finyze.service;
 
-import com.finyze.dto.UserPortfoliosDto;
-import com.finyze.model.Portfolio;
+import com.finyze.model.dto.UserPortfolioDto;
 import com.finyze.model.User;
 import com.finyze.repository.PortfolioRepository;
 import com.finyze.repository.UserRepository;
@@ -32,9 +31,9 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public List<UserPortfoliosDto> getUserPortfolios(Long userId) {
+    public List<UserPortfolioDto> getUserPortfolios(Long userId) {
         return portfolioRepository.findByUserId(userId).stream()
-                .map(portfolio -> new UserPortfoliosDto(portfolio.getId(), portfolio.getName()))
+                .map(portfolio -> new UserPortfolioDto(portfolio.getId(), portfolio.getName()))
                 .toList();
     }
 }

@@ -1,6 +1,6 @@
 package com.finyze.controller;
 
-import com.finyze.dto.UserPortfoliosDto;
+import com.finyze.model.dto.UserPortfolioDto;
 import com.finyze.model.User;
 import com.finyze.service.UserService;
 import org.springframework.http.ResponseEntity;
@@ -33,8 +33,9 @@ public class UserController {
     }
 
     @GetMapping("/{id}/portfolios")
-    public ResponseEntity<List<UserPortfoliosDto>> getUserPortfolios(@PathVariable Long id) {
-        return ResponseEntity.ok(userService.getUserPortfolios(id));
+    public ResponseEntity<List<UserPortfolioDto>> getUserPortfolios(@PathVariable Long id) {
+        List<UserPortfolioDto> userPortfoliosList = userService.getUserPortfolios(id);
+        return ResponseEntity.ok(userPortfoliosList);
     }
 }
 
