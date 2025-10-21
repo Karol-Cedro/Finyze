@@ -45,7 +45,15 @@ export class Portfolios implements OnInit {
       },
       error: (err) => {
         console.error('Error fetching portfolios:', err);
-        this.error = 'Failed to load portfolios';
+        if (err.name === 'TimeoutError') {
+          this.error = 'Request timed out. Please check if the backend server is running on http://localhost:8080';
+        } else if (err.status === 0) {
+          this.error = 'Cannot connect to server. Please ensure the backend is running and CORS is configured.';
+        } else if (err.status === 404) {
+          this.error = 'Portfolios endpoint not found. Please check the API configuration.';
+        } else {
+          this.error = `Failed to load portfolios: ${err.message || 'Unknown error'}`;
+        }
         this.isLoading = false;
       }
     });
