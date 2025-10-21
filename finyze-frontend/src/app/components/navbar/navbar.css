@@ -26,6 +26,9 @@
     }
 
     .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
       font-size: 1.5rem;
       font-weight: bold;
       color: #00bcd4;
@@ -33,9 +36,19 @@
       cursor: pointer;
       border-bottom: none !important;
 
+      .logo-icon {
+        height: 42px;
+        width: auto;
+        transition: transform 0.3s ease;
+      }
+
       &:hover {
-        opacity: 0.8;
+        opacity: 0.9;
         border-bottom: none !important;
+
+        .logo-icon {
+          transform: scale(1.05);
+        }
       }
     }
   }
