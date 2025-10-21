@@ -10,7 +10,7 @@ export interface PortfolioListItem {
 @Injectable({
   providedIn: 'root'
 })
-export class PortfolioService {
+export class PortfoliosService {
   private apiUrl = 'http://localhost:8080/api/users';
 
   constructor(private http: HttpClient) { }

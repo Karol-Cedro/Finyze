@@ -17,6 +17,7 @@
       text-decoration: none;
       color: #ffffff;
       font-weight: 500;
+      transition: all 0.3s ease;
 
       &.active, &:hover {
         color: #00bcd4;
@@ -29,6 +30,13 @@
       font-weight: bold;
       color: #00bcd4;
       margin-right: 2rem;
+      cursor: pointer;
+      border-bottom: none !important;
+
+      &:hover {
+        opacity: 0.8;
+        border-bottom: none !important;
+      }
     }
   }
 
