@@ -1,16 +1,16 @@
-// portfolio.ts
+// portfolios.ts
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PortfolioService, PortfolioListItem } from '../../../services/portfolio.service';
+import { PortfoliosService, PortfolioListItem } from '../../../services/portfolios.service';
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './portfolio.html',
-  styleUrls: ['./portfolio.css']
+  templateUrl: './portfolios.html',
+  styleUrls: ['./portfolios.css']
 })
-export class Portfolio implements OnInit {
+export class Portfolios implements OnInit {
   // Static property to persist across component instances
   private static cachedPortfolios: PortfolioListItem[] | null = null;
   private static hasLoaded = false;
@@ -19,12 +19,12 @@ export class Portfolio implements OnInit {
   isLoading = true;
   error: string | null = null;
 
-  constructor(private portfolioService: PortfolioService) {}
+  constructor(private portfoliosService: PortfoliosService) {}
 
   ngOnInit(): void {
     // Check if we already have cached data
-    if (Portfolio.hasLoaded && Portfolio.cachedPortfolios) {
-      this.portfolios = Portfolio.cachedPortfolios;
+    if (Portfolios.hasLoaded && Portfolios.cachedPortfolios) {
+      this.portfolios = Portfolios.cachedPortfolios;
       this.isLoading = false;
     } else {
       this.loadPortfolios(1);
@@ -35,12 +35,12 @@ export class Portfolio implements OnInit {
     this.isLoading = true;
     this.error = null;
 
-    this.portfolioService.getPortfolio(userId).subscribe({
+    this.portfoliosService.getPortfolio(userId).subscribe({
       next: (data) => {
         this.portfolios = data;
         // Cache the data for future instances
-        Portfolio.cachedPortfolios = data;
-        Portfolio.hasLoaded = true;
+        Portfolios.cachedPortfolios = data;
+        Portfolios.hasLoaded = true;
         this.isLoading = false;
       },
       error: (err) => {
