@@ -1,4 +1,4 @@
-package com.finyze.configuration;
+package com.finyze.security;
 
 import io.swagger.v3.oas.models.ExternalDocumentation;
 import io.swagger.v3.oas.models.OpenAPI;
