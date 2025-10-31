@@ -1,3 +1,4 @@
+
 <nav class="navbar">
   <div class="navbar-left">
     <a routerLink="/home" class="brand">
@@ -11,7 +12,16 @@
     <a routerLink="/crypto" routerLinkActive="active">Cryptocurrencies</a>
     <a routerLink="/currencies" routerLinkActive="active">Currencies</a>
   </div>
-  <div class="navbar-right">
-    <button routerLink="/login">Login / Sign Up</button>
+  <div class="auth-buttons">
+    <ng-container *ngIf="!isAuthenticated">
+      <button (click)="navigateToLogin()" class="login-btn">Login</button>
+      <button (click)="navigateToSignup()" class="signup-btn">Sign Up</button>
+    </ng-container>
+    <ng-container *ngIf="isAuthenticated">
+      <div class="user-info">
+        <span class="user-nickname">Hello, {{ currentUserNickname }}!</span>
+        <button (click)="onLogout()" class="logout-btn">Logout</button>
+      </div>
+    </ng-container>
   </div>
 </nav>

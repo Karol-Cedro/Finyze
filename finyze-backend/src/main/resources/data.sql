@@ -1,6 +1,6 @@
 -- USERS
-INSERT INTO users (nickname, email, password)
-VALUES ('karol', 'karol@example.com', 'hashedpassword123');
+INSERT INTO users (nickname, email, password)     -- hashedpassword123
+VALUES ('karol', 'karol@example.com', '$2a$12$0Qg52a.plqzyB/3J/q5K2ekEu5Qvri/2gi4K7aNyi.m8FsWW4FjqO');
 
 INSERT INTO users (nickname, email, password)
 VALUES ('alice', 'alice@example.com', 'hashedpassword456');
