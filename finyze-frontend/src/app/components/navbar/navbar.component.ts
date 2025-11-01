@@ -1,6 +1,9 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive, Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -13,14 +16,31 @@ import { RouterLink, RouterLinkActive, Router } from '@angular/router';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent {
-  @Input() isAuthenticated: boolean = false;
-  @Output() logout = new EventEmitter<void>();
+export class NavbarComponent implements OnInit, OnDestroy {
+  isAuthenticated: boolean = false;
+  private authSubscription: Subscription = new Subscription();
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private authService: AuthService
+  ) {}
+
+  ngOnInit(): void {
+    // Subscribe to authentication state changes
+    this.authSubscription = this.authService.isAuthenticated().subscribe(
+      (authenticated: boolean) => {
+        this.isAuthenticated = authenticated;
+      }
+    );
+  }
+
+  ngOnDestroy(): void {
+    this.authSubscription.unsubscribe();
+  }
 
   onLogout(): void {
-    this.logout.emit();
+    this.authService.logout();
+    this.router.navigate(['/home']);
   }
 
   navigateToLogin(): void {
