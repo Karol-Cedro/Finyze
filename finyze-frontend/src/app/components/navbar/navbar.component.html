@@ -1,27 +1,27 @@
-
 <nav class="navbar">
-  <div class="navbar-left">
-    <a routerLink="/home" class="brand">
-      <img src="/logo.png" alt="Finyze Logo" class="logo-icon">
-      <span>Finyze</span>
-    </a>
-    <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
-    <a routerLink="/portfolios" routerLinkActive="active">My Portfolios</a>
-    <a routerLink="/stocks" routerLinkActive="active">Stocks</a>
-    <a routerLink="/bonds" routerLinkActive="active">Bonds</a>
-    <a routerLink="/crypto" routerLinkActive="active">Cryptocurrencies</a>
-    <a routerLink="/currencies" routerLinkActive="active">Currencies</a>
-  </div>
-  <div class="auth-buttons">
-    <ng-container *ngIf="!isAuthenticated">
-      <button (click)="navigateToLogin()" class="login-btn">Login</button>
-      <button (click)="navigateToSignup()" class="signup-btn">Sign Up</button>
-    </ng-container>
-    <ng-container *ngIf="isAuthenticated">
-      <div class="user-info">
-        <span class="user-nickname">Hello, {{ currentUserNickname }}!</span>
-        <button (click)="onLogout()" class="logout-btn">Logout</button>
-      </div>
-    </ng-container>
-  </div>
+    <div class="navbar-left">
+        <a routerLink="/home" class="brand">
+            <img src="/logo.png" alt="Finyze Logo" class="logo-icon">
+            <span>Finyze</span>
+        </a>
+        <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+        <a routerLink="/portfolios" routerLinkActive="active">My Portfolios</a>
+        <a routerLink="/stocks" routerLinkActive="active">Stocks</a>
+        <a routerLink="/bonds" routerLinkActive="active">Bonds</a>
+        <a routerLink="/crypto" routerLinkActive="active">Cryptocurrencies</a>
+        <a routerLink="/currencies" routerLinkActive="active">Currencies</a>
+    </div>
+    <div class="auth-buttons">
+        @if (isAuthenticated) {
+            <div class="user-info">
+                <span class="user-nickname">Hello, {{ currentUserNickname }}!</span>
+                <button (click)="onLogout()" class="logout-btn">Logout</button>
+            </div>
+        } @else {
+            <div>
+                <button (click)="navigateToLogin()" class="login-btn">Login</button>
+                <button (click)="navigateToSignup()" class="signup-btn">Sign Up</button>
+            </div>
+        }
+    </div>
 </nav>
