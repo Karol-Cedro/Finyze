@@ -3,28 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { isPlatformBrowser } from '@angular/common';
-
-export interface User {
-  id: string;
-  email: string;
-  nickname: string;
-}
-
-export interface RegisterUserDto {
-  nickname: string;
-  email: string;
-  password: string;
-}
-
-export interface LoginUserDto {
-  email: string;
-  password: string;
-}
-
-export interface LoginResponse {
-  token: string;
-  expiresIn: number;
-}
+import { User, RegisterUserDto, LoginUserDto, LoginResponse } from '../model';
 
 @Injectable({
   providedIn: 'root'

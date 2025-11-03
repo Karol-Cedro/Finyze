@@ -74,6 +74,11 @@
     margin-left: auto;
   }
 
+  .auth-buttons > div {
+    display: flex;
+    gap: 0.5rem;
+  }
+
   .user-info {
     display: flex;
     align-items: center;
