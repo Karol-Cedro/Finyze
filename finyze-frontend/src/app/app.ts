@@ -15,7 +15,6 @@ import { filter } from 'rxjs/operators';
   styleUrls: ['./app.css']
 })
 export class App implements OnInit, OnDestroy {
-  title = 'finyze-frontend';
   isAuthenticated = false;
   showNavbar = true; // Always show navbar for now
   private authSubscription?: Subscription;
