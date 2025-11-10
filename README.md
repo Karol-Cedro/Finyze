@@ -3,6 +3,16 @@ Application for tracking and analyzing your financial portfolio.
 
 ~Track Smarter. Invest Better.
 
+## General Information
+
+Application was created mostly for learning purposes, which I try to develop in my free time.
+
+If you somehow find this repo on the internet and find the idea interesting :D I am open for help and contributions.
+
+The description which can be found below is not the current state of the project, it is more like a vision that I had mixed with my notes and ideas that I have regarding Finyze.
+
+The project is currently hosted on my private server, which I am maintaining.
+
 Finyze API documented using swagger is available under http://localhost:8080/finyze-swagger
 
 ## Features
