@@ -63,8 +63,8 @@ jobs:
         if: ${{ inputs.build_and_push_image }}
         uses: docker/build-push-action@v6
         with:
-          context: "{{defaultContext}}:finyze-frontend"
-          file: Dockerfile
+          context: ./finyze-frontend
+          file: ./finyze-frontend/Dockerfile
           push: true
           platforms: linux/amd64
           tags: |
