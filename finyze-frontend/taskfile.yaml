@@ -1,0 +1,13 @@
+version: '3'
+
+vars:
+  VERSION: 0.0.1
+
+tasks:
+  build-image:
+    cmds:
+      - docker build -t finyze:front-{{.VERSION}} .
+
+  run-image:
+    cmds:
+      - docker run -p 8001:8001 finyze:front-{{.VERSION}}

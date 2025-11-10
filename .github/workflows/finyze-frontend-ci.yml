@@ -2,6 +2,12 @@ name: Finyze Frontend CI
 
 on:
   workflow_dispatch:
+    inputs:
+      build_and_push_image:
+        description: "Build and push a docker image to the Docker Hub."
+        required: false
+        type: boolean
+        default: false
 
   push:
     branches: [ "main" ]
@@ -24,7 +30,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '22'
+          node-version: '24'
 
       - name: Install dependencies
         run: npm install
@@ -32,5 +38,34 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Test
+      - name: Run Test
         run: npm test -- --watch=false --browsers=ChromeHeadless --code-coverage
+
+      - name: Get app version
+        id: get_version
+        if: ${{ inputs.build_and_push_image }}
+        run: |
+          VERSION=$(jq -r '.version' package.json)
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Set up Docker Buildx
+        if: ${{ inputs.build_and_push_image }}
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to Docker Hub
+        if: ${{ inputs.build_and_push_image }}
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push production image
+        if: ${{ inputs.build_and_push_image }}
+        uses: docker/build-push-action@v6
+        with:
+          context: "{{defaultContext}}:finyze-frontend"
+          file: Dockerfile
+          push: true
+          platforms: linux/amd64
+          tags: |
+            ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKERHUB_PROJECT_NAME }}:front-${{ steps.get_version.outputs.version }}
