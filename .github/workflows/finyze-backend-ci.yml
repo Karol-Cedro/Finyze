@@ -31,3 +31,6 @@ jobs:
 
       - name: Build
         run: mvn clean install
+
+      - name: Run Tests
+        run: mvn clean test
